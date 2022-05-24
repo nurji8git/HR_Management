@@ -1,0 +1,425 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXListView?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<Pane prefHeight="900.0" prefWidth="1700.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <children>
+      <BorderPane maxHeight="900.0" maxWidth="1700.0" prefHeight="900.0" prefWidth="1700.0">
+         <left>
+            <Pane fx:id="leftbuttonsbar" prefHeight="800.0" prefWidth="350.0" style="-fx-background-color: #DFDFDF;" BorderPane.alignment="CENTER">
+               <children>
+                  <JFXButton fx:id="all_employees_btn" layoutX="50.0" layoutY="40.0" ripplerFill="#556677" style="-fx-background-color: #EEEEEE; -fx-background-radius: 40; -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.4) , 5, 0.0 , 0 , 1 );" text="Все сотрудники" textAlignment="CENTER" textFill="#556677">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton fx:id="addIntern_MainButton" layoutX="50.0" layoutY="139.0" prefHeight="31.0" prefWidth="200.0" style="-fx-background-color: #EEEEEE; -fx-background-radius: 100; -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.4) , 5, 0.0 , 0 , 1 );" text="Добавить стажера в базу" textFill="#556677">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton fx:id="addEmp_MainButton" layoutX="50.0" layoutY="90.0" ripplerFill="#556677" style="-fx-background-color: #EEEEEE; -fx-background-radius: 100; -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.4) , 5, 0.0 , 0 , 1 );" text="Добавить сотрудника в базу" textAlignment="CENTER" textFill="#556677">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton fx:id="resumes_MainButton" layoutX="50.0" layoutY="335.0" ripplerFill="#556677" style="-fx-background-color: #EEEEEE; -fx-background-radius: 40; -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.4) , 5, 0.0 , 0 , 1 );" text="Резюме и анкеты" textAlignment="CENTER" textFill="#556677">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton fx:id="table_vac_busTrip_MainButton" layoutX="50.0" layoutY="237.0" ripplerFill="#556677" style="-fx-background-color: #EEEEEE; -fx-background-radius: 40; -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.4) , 5, 0.0 , 0 , 1 );" text="Список отпусков и командировок" textAlignment="CENTER" textFill="#556677">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton fx:id="allInterns_MainButton" layoutX="50.0" layoutY="383.0" ripplerFill="#556677" style="-fx-background-color: #EEEEEE; -fx-background-radius: 40; -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.4) , 5, 0.0 , 0 , 1 );" text="Все стажеры" textAlignment="CENTER" textFill="#556677">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton fx:id="timesheet_MainButton" layoutX="50.0" layoutY="191.0" ripplerFill="#556677" style="-fx-background-color: #EEEEEE; -fx-background-radius: 40; -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.4) , 5, 0.0 , 0 , 1 );" text="Табель учета рабочего времени" textAlignment="CENTER" textFill="#556677">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton fx:id="otpravit_button" layoutX="50.0" layoutY="287.0" ripplerFill="#556677" style="-fx-background-color: #EEEEEE; -fx-background-radius: 40; -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.4) , 5, 0.0 , 0 , 1 );" text="Отправить сотрудника в отпуск" textAlignment="CENTER" textFill="#556677">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </JFXButton>
+               </children>
+            </Pane>
+         </left>
+         <top>
+            <Pane fx:id="topbar" prefHeight="100.0" prefWidth="1700.0" style="-fx-background-color: #556677;" BorderPane.alignment="CENTER">
+               <children>
+                  <JFXButton fx:id="settings_Button" layoutX="25.0" layoutY="25.0" prefHeight="50.0" prefWidth="50.0" ripplerFill="#55667700" style="-fx-background-color: #EEEEEE; -fx-background-radius: 40;" textFill="TRANSPARENT" />
+                  <JFXTextField fx:id="searchByName_MainJFXTextField" alignment="CENTER" focusColor="#405aa800" layoutX="417.0" layoutY="34.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="35.0" prefWidth="446.0" promptText="Имя сотрудника" style="-fx-background-radius: 40; -fx-background-color: #DDDDDD; -fx-opacity: 0.8;" unFocusColor="#4d4d4d00">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </JFXTextField>
+                  <JFXButton fx:id="searchByName_MainJFXButton" layoutX="829.0" layoutY="34.0" prefHeight="35.0" prefWidth="35.0" ripplerFill="#55667700" style="-fx-background-color: #FFFFFF; -fx-background-radius: 40; -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.4) , 5, 0.0 , 0 , 1 );" text="Button" textFill="TRANSPARENT" />
+                  <Text fx:id="cur_time" fill="#e3ffff" layoutX="1570.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="12:45">
+                     <font>
+                        <Font size="30.0" />
+                     </font>
+                  </Text>
+                  <Pane fx:id="menuPane" layoutX="-2.0" layoutY="-1.0" prefHeight="517.0" prefWidth="354.0" style="-fx-background-color: #556677; -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.4) , 5, 0.0 , 0 , 1 );" visible="false">
+                     <children>
+                        <Pane fx:id="menuUserButton" layoutY="-1.0" prefHeight="103.0" prefWidth="354.0" style="-fx-background-color: #DFDFDF; -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.4) , 5, 0.0 , 0 , 1 );">
+                           <children>
+                              <JFXButton fx:id="logotipUser" layoutX="25.0" layoutY="25.0" prefHeight="50.0" prefWidth="50.0" ripplerFill="#55667700" style="-fx-background-color: #556677; -fx-background-radius: 40; -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.4) , 5, 0.0 , 0 , 1 );" textFill="TRANSPARENT" />
+                              <Text fx:id="currentUser" layoutX="99.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text">
+                                 <font>
+                                    <Font size="25.0" />
+                                 </font>
+                              </Text>
+                           </children>
+                        </Pane>
+                        <JFXButton fx:id="changeAccountButton" layoutX="89.0" layoutY="155.0" style="-fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.4) , 5, 0.0 , 0 , 1 );" text="Выход" textFill="WHITE">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </JFXButton>
+                        <JFXButton fx:id="logotip_ChangeAccount" layoutX="27.0" layoutY="149.0" prefHeight="50.0" prefWidth="50.0" ripplerFill="#55667700" style="-fx-background-color: #DFDFDF; -fx-background-radius: 40; -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.4) , 5, 0.0 , 0 , 1 );" textFill="TRANSPARENT" />
+                     </children>
+                  </Pane>
+                  <Text fx:id="current_scene" fill="WHITE" layoutX="1117.0" layoutY="57.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Добавление сотрудника">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </Text>
+               </children>
+            </Pane>
+         </top>
+         <center>
+            <Pane fx:id="main_content" prefHeight="800.0" prefWidth="1350.0" BorderPane.alignment="CENTER">
+               <children>
+                  <JFXListView fx:id="employee_list" disable="true" prefHeight="800.0" prefWidth="1350.0" visible="false" />
+                  <JFXListView fx:id="intern_list" disable="true" prefHeight="800.0" prefWidth="1350.0" visible="false" />
+                  <JFXListView fx:id="resume_list" disable="true" prefHeight="800.0" prefWidth="1350.0" visible="false" />
+                  <JFXListView fx:id="absence_list" disable="true" prefHeight="800.0" prefWidth="1350.0" visible="false" />
+                  <Pane fx:id="addEmp_Pane" disable="true" prefHeight="800.0" prefWidth="1350.0" visible="false">
+                     <children>
+                        <TextField fx:id="addEmp_TextField_FirstName" layoutX="150.0" layoutY="150.0" promptText="Имя">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </TextField>
+                        <TextField fx:id="addEmp_TextField_SecondName" layoutX="150.0" layoutY="200.0" promptText="Фамилия">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </TextField>
+                        <TextField fx:id="addEmp_TextField_DateBirth" layoutX="150.0" layoutY="250.0" promptText="Дата рождения">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </TextField>
+                        <TextField fx:id="addEmp_TextField_PhoneNumber" layoutX="150.0" layoutY="460.0" promptText="Номер телефона">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </TextField>
+                        <TextField fx:id="addEmp_TextField_Email" layoutX="150.0" layoutY="510.0" promptText="Электронная почта">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </TextField>
+                        <ChoiceBox fx:id="addEmp_ChoiceBox_Department" layoutX="450.0" layoutY="430.0" prefWidth="150.0" style="-fx-background-color: #FFFFFF; -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.4) , 5, 0.0 , 0 , 1 );" />
+                        <ChoiceBox fx:id="addEmp_ChoiceBox_Position" layoutX="450.0" layoutY="480.0" prefWidth="150.0" style="-fx-background-color: #FFFFFF; -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.4) , 5, 0.0 , 0 , 1 );" />
+                        <ChoiceBox fx:id="addEmp_ChoiceBox_HasFamily" layoutX="150.0" layoutY="350.0" prefWidth="150.0" style="-fx-background-color: #FFFFFF; -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.4) , 5, 0.0 , 0 , 1 );" />
+                        <ChoiceBox fx:id="addEmp_ChoiceBox_Sex" layoutX="150.0" layoutY="300.0" prefWidth="150.0" style="-fx-background-color: #FFFFFF; -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.4) , 5, 0.0 , 0 , 1 );" />
+                        <Label layoutX="166.0" layoutY="426.0" text="Контактные данные">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="464.0" layoutY="115.0" prefHeight="25.0" prefWidth="153.0" text="Место проживания">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="482.0" layoutY="395.0" text="Про работу">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="185.0" layoutY="115.0" text="Личные данные">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <JFXButton fx:id="add_emp_Button" layoutX="1000.0" layoutY="530.0" style="-fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.4) , 5, 0.0 , 0 , 1 ); -fx-background-color: #556677; -fx-background-radius: 10;" text="Добавить" textFill="WHITE" />
+                        <ChoiceBox fx:id="addEmp_TextField_Country" layoutX="460.0" layoutY="150.0" prefWidth="150.0" style="-fx-background-color: #FFFFFF; -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.4) , 5, 0.0 , 0 , 1 );" />
+                        <ChoiceBox fx:id="addEmp_TextField_State" layoutX="460.0" layoutY="200.0" prefWidth="150.0" style="-fx-background-color: #FFFFFF; -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.4) , 5, 0.0 , 0 , 1 );" />
+                        <ChoiceBox fx:id="addEmp_TextField_City" layoutX="460.0" layoutY="250.0" prefWidth="150.0" style="-fx-background-color: #FFFFFF; -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.4) , 5, 0.0 , 0 , 1 );" />
+                        <ChoiceBox fx:id="addEmp_TextField_Street" layoutX="460.0" layoutY="300.0" prefWidth="150.0" style="-fx-background-color: #FFFFFF; -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.4) , 5, 0.0 , 0 , 1 );" />
+                     </children>
+                  </Pane>
+                  <Pane fx:id="timeTracking_Pane" disable="true" prefHeight="800.0" prefWidth="1350.0" visible="false">
+                     <children>
+                        <JFXTextField fx:id="timeTracking_JFXTextField_SearchByName" alignment="CENTER" focusColor="#405aa800" layoutX="174.0" layoutY="57.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="35.0" prefWidth="350.0" promptText="Имя сотрудника" style="-fx-background-radius: 10; -fx-background-color: #DDDDDD; -fx-opacity: 0.8; -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.4) , 5, 0.0 , 0 , 1 );" unFocusColor="#4d4d4d00">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </JFXTextField>
+                        <JFXButton fx:id="timeTracking_JFXButton_SearchByName" layoutX="495.0" layoutY="58.0" prefHeight="35.0" prefWidth="35.0" ripplerFill="#55667700" style="-fx-background-color: #556677; -fx-background-radius: 40;" text="Button" textFill="TRANSPARENT" />
+                        <TableView fx:id="timeTracking_Table" layoutX="174.0" layoutY="116.0" prefHeight="461.0" prefWidth="1001.0" style="-fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.4) , 5, 0.0 , 0 , 1 );">
+                          <columns>
+                            <TableColumn fx:id="timeTracking_Emps" prefWidth="269.3333740234375" text="Сотрудники" />
+                            <TableColumn fx:id="timeTracking_Date" prefWidth="159.6666259765625" text="Дата" />
+                              <TableColumn fx:id="timeTracking_ArrivalTime" prefWidth="205.0" text="Время прихода" />
+                              <TableColumn fx:id="timeTracking_LeaveTime" prefWidth="197.333251953125" text="Время ухода" />
+                              <TableColumn fx:id="timeTracking_AmountHours" prefWidth="169.0" text="Количество часов" />
+                          </columns>
+                        </TableView>
+                        <Label layoutX="174.0" layoutY="610.0" prefHeight="26.0" prefWidth="191.0" text="Общее количество часов:">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <JFXTextField fx:id="timeTracking_JFXTextField_TotalAmountHours" layoutX="373.0" layoutY="607.0" prefHeight="37.0" prefWidth="110.0">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </JFXTextField>
+                     </children>
+                  </Pane>
+                  <Pane fx:id="archive_Pane" disable="true" prefHeight="800.0" prefWidth="1350.0" style="-fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.4) , 5, 0.0 , 0 , 1 );" visible="false">
+                     <children>
+                        <JFXTextField fx:id="searchByName_archiveJFXTextField" alignment="CENTER" focusColor="#405aa800" layoutX="45.0" layoutY="99.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="35.0" prefWidth="350.0" promptText="Имя сотрудника" style="-fx-background-radius: 10; -fx-background-color: #DDDDDD; -fx-opacity: 0.8; -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.4) , 5, 0.0 , 0 , 1 );" unFocusColor="#4d4d4d00">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </JFXTextField>
+                        <JFXButton fx:id="searchByName_archiveButton" layoutX="365.0" layoutY="99.0" prefHeight="35.0" prefWidth="35.0" ripplerFill="#55667700" style="-fx-background-color: #556677; -fx-background-radius: 40; -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.4) , 5, 0.0 , 0 , 1 );" text="Button" textFill="TRANSPARENT" />
+                        <TableView fx:id="timeTracking_Table1" layoutX="36.0" layoutY="153.0" prefHeight="545.0" prefWidth="1275.0" style="-fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.4) , 5, 0.0 , 0 , 1 );">
+                           <columns>
+                              <TableColumn fx:id="archive_Numeration" prefWidth="57.33331298828125" text="Номер" />
+                              <TableColumn fx:id="archive_EmpFirstName" prefWidth="171.33331298828125" text="Имя" />
+                              <TableColumn fx:id="archive_EmpSecondName" prefWidth="208.66668701171875" text="Фамилия" />
+                              <TableColumn fx:id="archive_EmpBirthDate" prefWidth="118.6666259765625" text="Дата рождения" />
+                              <TableColumn fx:id="archive_EmpPhoneNumber" prefWidth="58.3333740234375" text="Номер телефона" />
+                              <TableColumn fx:id="archive_EmpEmail" prefWidth="96.0" text="Электронная почта" />
+                              <TableColumn fx:id="archive_EmpCountry" prefWidth="70.6666259765625" text="Страна" />
+                              <TableColumn fx:id="archive_EmpState" prefWidth="99.0" text="Штат/Область" />
+                              <TableColumn fx:id="archive_EmpCity" prefWidth="54.6666259765625" text="Город" />
+                              <TableColumn fx:id="archive_EmpStreet" prefWidth="55.333251953125" text="Улица" />
+                              <TableColumn fx:id="archive_EmpHireDate" prefWidth="88.3333740234375" text="Дата принятия на работу" />
+                              <TableColumn fx:id="archive_EmpDismissDate" prefWidth="88.0" text="Дата увольнения с работы" />
+                              <TableColumn fx:id="archive_EmpSex" prefWidth="32.6666259765625" text="Пол" />
+                              <TableColumn fx:id="archive_EmpHasFamily" prefWidth="78.6666259765625" text="Семейное положение" />
+                           </columns>
+                        </TableView>
+                     </children>
+                  </Pane>
+                  <Pane fx:id="edit_emp_pane" disable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1350.0" style="-fx-background-color: #FFFFFF;" visible="false">
+                     <children>
+                        <TextField fx:id="edit_emp_fname" layoutX="146.0" layoutY="48.0" promptText="Имя" />
+                        <TextField fx:id="edit_emp_sname" layoutX="146.0" layoutY="88.0" promptText="Фамилия" />
+                        <TextField fx:id="edit_emp_bdate" layoutX="146.0" layoutY="128.0" promptText="ГГГГ-ММ-ДД" />
+                        <ChoiceBox fx:id="edit_emp_sex" layoutX="145.0" layoutY="175.0" prefWidth="150.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 5; -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.4) , 5, 0.0 , 0 , 1 );" />
+                        <ChoiceBox fx:id="edit_emp_has_family" layoutX="145.0" layoutY="225.0" prefWidth="150.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 5; -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.4) , 5, 0.0 , 0 , 1 );" />
+                        <ChoiceBox fx:id="edit_emp_country" layoutX="545.0" layoutY="45.0" prefWidth="150.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 5; -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.4) , 5, 0.0 , 0 , 1 );" />
+                        <ChoiceBox fx:id="edit_emp_state" layoutX="545.0" layoutY="95.0" prefWidth="150.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 5; -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.4) , 5, 0.0 , 0 , 1 );" />
+                        <ChoiceBox fx:id="edit_emp_city" layoutX="545.0" layoutY="145.0" prefWidth="150.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 5; -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.4) , 5, 0.0 , 0 , 1 );" />
+                        <ChoiceBox fx:id="edit_emp_street" layoutX="545.0" layoutY="195.0" prefWidth="150.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 5; -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.4) , 5, 0.0 , 0 , 1 );" />
+                        <ChoiceBox fx:id="edit_emp_department" layoutX="545.0" layoutY="275.0" prefWidth="150.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 5; -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.4) , 5, 0.0 , 0 , 1 );" />
+                        <ChoiceBox fx:id="edit_emp_position" layoutX="545.0" layoutY="325.0" prefWidth="150.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 5; -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.4) , 5, 0.0 , 0 , 1 );" />
+                        <TextField fx:id="edit_emp_email" layoutX="146.0" layoutY="318.0" promptText="example@test.com" />
+                        <TextField fx:id="edit_emp_pnymber" layoutX="146.0" layoutY="358.0" />
+                        <JFXButton fx:id="edit_emp_button" layoutX="600.0" layoutY="388.0" style="-fx-background-color: #556677; -fx-background-radius: 5; -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.4) , 5, 0.0 , 0 , 1 );" text="Редактировать" textFill="WHITE" />
+                        <Text layoutX="299.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Редактировать данные сотрудника" />
+                        <Text layoutX="109.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Имя" />
+                        <Text layoutX="79.0" layoutY="105.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Фамилия" />
+                        <Text layoutX="42.0" layoutY="145.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Дата рождения" />
+                        <Text layoutX="102.0" layoutY="195.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Пол" />
+                        <Text layoutX="44.0" layoutY="245.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Есть ли семья?" />
+                        <Text layoutX="72.0" layoutY="335.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Эл. почта" />
+                        <Text layoutX="28.0" layoutY="375.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Номер телефона" />
+                        <Text layoutX="477.0" layoutY="62.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Страна" />
+                        <Text layoutX="477.0" layoutY="112.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Область" />
+                        <Text layoutX="477.0" layoutY="162.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Город" />
+                        <Text layoutX="477.0" layoutY="212.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Улица" />
+                        <Text layoutX="477.0" layoutY="292.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Отдел" />
+                        <Text layoutX="477.0" layoutY="342.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Должность" />
+                        <JFXButton fx:id="edit_emp_cancel_button" layoutX="480.0" layoutY="388.0" style="-fx-background-color: #556677; -fx-background-radius: 5; -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.4) , 5, 0.0 , 0 , 1 );" text="Отмена" textFill="WHITE" />
+                     </children>
+                  </Pane>
+                  <Pane fx:id="about_emp_pane" disable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1350.0" style="-fx-background-color: #FFFFFF;" visible="false">
+                     <children>
+                        <JFXButton fx:id="delete_emp_button" layoutX="480.0" layoutY="588.0" style="-fx-background-color: #556677; -fx-background-radius: 5; -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.4) , 5, 0.0 , 0 , 1 );" text="Удалить сотрудника" textFill="WHITE" />
+                        <Text layoutX="300.0" layoutY="105.0" nodeOrientation="RIGHT_TO_LEFT" strokeType="OUTSIDE" strokeWidth="0.0" text="Имя:" textAlignment="RIGHT" />
+                        <Text layoutX="266.0" layoutY="145.0" nodeOrientation="RIGHT_TO_LEFT" strokeType="OUTSIDE" strokeWidth="0.0" text="Фамилия:" textAlignment="RIGHT" />
+                        <Text layoutX="222.0" layoutY="185.0" nodeOrientation="RIGHT_TO_LEFT" strokeType="OUTSIDE" strokeWidth="0.0" text="Дата рождения:" textAlignment="RIGHT" />
+                        <Text layoutX="300.0" layoutY="234.0" nodeOrientation="RIGHT_TO_LEFT" strokeType="OUTSIDE" strokeWidth="0.0" text="Пол:" textAlignment="RIGHT" />
+                        <Text layoutX="227.0" layoutY="284.0" nodeOrientation="RIGHT_TO_LEFT" strokeType="OUTSIDE" strokeWidth="0.0" text="Есть ли семья?:" textAlignment="RIGHT" />
+                        <Text layoutX="262.0" layoutY="346.0" nodeOrientation="RIGHT_TO_LEFT" strokeType="OUTSIDE" strokeWidth="0.0" text="Эл. почта:" textAlignment="RIGHT" />
+                        <Text layoutX="208.0" layoutY="405.0" nodeOrientation="RIGHT_TO_LEFT" strokeType="OUTSIDE" strokeWidth="0.0" text="Номер телефона:" textAlignment="RIGHT" />
+                        <Text layoutX="672.0" layoutY="102.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Страна:" />
+                        <Text layoutX="665.0" layoutY="146.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Область:" />
+                        <Text layoutX="680.0" layoutY="186.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Город:" />
+                        <Text layoutX="679.0" layoutY="235.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Улица:" />
+                        <Text layoutX="677.0" layoutY="286.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Отдел:" />
+                        <Text layoutX="641.0" layoutY="344.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Должность:" />
+                        <JFXButton fx:id="about_emp_back_button" layoutX="330.0" layoutY="588.0" style="-fx-background-color: #556677; -fx-background-radius: 5; -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.4) , 5, 0.0 , 0 , 1 );" text="Назад" textFill="WHITE" />
+                        <Text fx:id="about_emp_fname" layoutX="355.0" layoutY="105.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name" />
+                        <Text fx:id="about_emp_sname" layoutX="355.0" layoutY="145.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name" />
+                        <Text fx:id="about_emp_bdate" layoutX="355.0" layoutY="185.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name" />
+                        <Text fx:id="about_emp_sex" layoutX="355.0" layoutY="235.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name" />
+                        <Text fx:id="about_emp_has_family" layoutX="355.0" layoutY="285.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name" />
+                        <Text fx:id="about_emp_email" layoutX="355.0" layoutY="345.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name" />
+                        <Text fx:id="about_emp_phone_number" layoutX="355.0" layoutY="405.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name" />
+                        <Text fx:id="about_emp_country" layoutX="745.0" layoutY="105.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name" />
+                        <Text fx:id="about_emp_state" layoutX="745.0" layoutY="145.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name" />
+                        <Text fx:id="about_emp_city" layoutX="745.0" layoutY="185.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name" />
+                        <Text fx:id="about_emp_street" layoutX="745.0" layoutY="235.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name" />
+                        <Text fx:id="about_emp_department" layoutX="745.0" layoutY="285.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name" />
+                        <Text fx:id="about_emp_position" layoutX="745.0" layoutY="345.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name" />
+                     </children>
+                  </Pane>
+                  <Pane fx:id="edit_emp_pane1" disable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1350.0" style="-fx-background-color: #FFFFFF;" visible="false">
+                     <children>
+                        <TextField fx:id="edit_emp_fname1" layoutX="146.0" layoutY="48.0" promptText="Имя" />
+                        <TextField fx:id="edit_emp_sname1" layoutX="146.0" layoutY="88.0" promptText="Фамилия" />
+                        <TextField fx:id="edit_emp_bdate1" layoutX="146.0" layoutY="128.0" promptText="ГГГГ-ММ-ДД" />
+                        <ChoiceBox fx:id="edit_emp_sex1" layoutX="145.0" layoutY="175.0" prefWidth="150.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 5; -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.4) , 5, 0.0 , 0 , 1 );" />
+                        <ChoiceBox fx:id="edit_emp_has_family1" layoutX="145.0" layoutY="225.0" prefWidth="150.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 5; -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.4) , 5, 0.0 , 0 , 1 );" />
+                        <ChoiceBox fx:id="edit_emp_country1" layoutX="545.0" layoutY="45.0" prefWidth="150.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 5; -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.4) , 5, 0.0 , 0 , 1 );" />
+                        <ChoiceBox fx:id="edit_emp_state1" layoutX="545.0" layoutY="95.0" prefWidth="150.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 5; -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.4) , 5, 0.0 , 0 , 1 );" />
+                        <ChoiceBox fx:id="edit_emp_city1" layoutX="545.0" layoutY="145.0" prefWidth="150.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 5; -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.4) , 5, 0.0 , 0 , 1 );" />
+                        <ChoiceBox fx:id="edit_emp_street1" layoutX="545.0" layoutY="195.0" prefWidth="150.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 5; -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.4) , 5, 0.0 , 0 , 1 );" />
+                        <ChoiceBox fx:id="edit_emp_department1" layoutX="545.0" layoutY="275.0" prefWidth="150.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 5; -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.4) , 5, 0.0 , 0 , 1 );" />
+                        <ChoiceBox fx:id="edit_emp_position1" layoutX="545.0" layoutY="325.0" prefWidth="150.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 5; -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.4) , 5, 0.0 , 0 , 1 );" />
+                        <TextField fx:id="edit_emp_email1" layoutX="146.0" layoutY="318.0" promptText="example@test.com" />
+                        <TextField fx:id="edit_emp_pnymber1" layoutX="146.0" layoutY="358.0" />
+                        <JFXButton fx:id="edit_emp_button1" layoutX="600.0" layoutY="388.0" style="-fx-background-color: #556677; -fx-background-radius: 5; -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.4) , 5, 0.0 , 0 , 1 );" text="Редактировать" textFill="WHITE" />
+                        <Text layoutX="299.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Редактировать данные стажера" />
+                        <Text layoutX="109.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Имя" />
+                        <Text layoutX="79.0" layoutY="105.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Фамилия" />
+                        <Text layoutX="42.0" layoutY="145.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Дата рождения" />
+                        <Text layoutX="102.0" layoutY="195.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Пол" />
+                        <Text layoutX="44.0" layoutY="245.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Есть ли семья?" />
+                        <Text layoutX="72.0" layoutY="335.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Эл. почта" />
+                        <Text layoutX="28.0" layoutY="375.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Номер телефона" />
+                        <Text layoutX="477.0" layoutY="62.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Страна" />
+                        <Text layoutX="477.0" layoutY="112.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Область" />
+                        <Text layoutX="477.0" layoutY="162.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Город" />
+                        <Text layoutX="477.0" layoutY="212.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Улица" />
+                        <Text layoutX="477.0" layoutY="292.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Отдел" />
+                        <Text layoutX="477.0" layoutY="342.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Должность" />
+                        <JFXButton fx:id="edit_emp_cancel_button1" layoutX="480.0" layoutY="388.0" style="-fx-background-color: #556677; -fx-background-radius: 5; -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.4) , 5, 0.0 , 0 , 1 );" text="Отмена" textFill="WHITE" />
+                     </children>
+                  </Pane>
+                  <Pane fx:id="about_emp_pane1" disable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1350.0" style="-fx-background-color: #FFFFFF;" visible="false">
+                     <children>
+                        <JFXButton fx:id="delete_emp_button1" layoutX="480.0" layoutY="588.0" style="-fx-background-color: #556677; -fx-background-radius: 5; -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.4) , 5, 0.0 , 0 , 1 );" text="Удалить сотрудника" textFill="WHITE" />
+                        <Text layoutX="300.0" layoutY="105.0" nodeOrientation="RIGHT_TO_LEFT" strokeType="OUTSIDE" strokeWidth="0.0" text="Имя:" textAlignment="RIGHT" />
+                        <Text layoutX="266.0" layoutY="145.0" nodeOrientation="RIGHT_TO_LEFT" strokeType="OUTSIDE" strokeWidth="0.0" text="Фамилия:" textAlignment="RIGHT" />
+                        <Text layoutX="222.0" layoutY="185.0" nodeOrientation="RIGHT_TO_LEFT" strokeType="OUTSIDE" strokeWidth="0.0" text="Дата рождения:" textAlignment="RIGHT" />
+                        <Text layoutX="300.0" layoutY="234.0" nodeOrientation="RIGHT_TO_LEFT" strokeType="OUTSIDE" strokeWidth="0.0" text="Пол:" textAlignment="RIGHT" />
+                        <Text layoutX="227.0" layoutY="284.0" nodeOrientation="RIGHT_TO_LEFT" strokeType="OUTSIDE" strokeWidth="0.0" text="Есть ли семья?:" textAlignment="RIGHT" />
+                        <Text layoutX="262.0" layoutY="346.0" nodeOrientation="RIGHT_TO_LEFT" strokeType="OUTSIDE" strokeWidth="0.0" text="Эл. почта:" textAlignment="RIGHT" />
+                        <Text layoutX="208.0" layoutY="405.0" nodeOrientation="RIGHT_TO_LEFT" strokeType="OUTSIDE" strokeWidth="0.0" text="Номер телефона:" textAlignment="RIGHT" />
+                        <Text layoutX="672.0" layoutY="102.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Страна:" />
+                        <Text layoutX="665.0" layoutY="146.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Область:" />
+                        <Text layoutX="680.0" layoutY="186.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Город:" />
+                        <Text layoutX="679.0" layoutY="235.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Улица:" />
+                        <Text layoutX="677.0" layoutY="286.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Отдел:" />
+                        <Text layoutX="641.0" layoutY="344.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Должность:" />
+                        <JFXButton fx:id="about_emp_back_button1" layoutX="330.0" layoutY="588.0" style="-fx-background-color: #556677; -fx-background-radius: 5; -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.4) , 5, 0.0 , 0 , 1 );" text="Назад" textFill="WHITE" />
+                        <Text fx:id="about_emp_fname1" layoutX="355.0" layoutY="105.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name" />
+                        <Text fx:id="about_emp_sname1" layoutX="355.0" layoutY="145.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name" />
+                        <Text fx:id="about_emp_bdate1" layoutX="355.0" layoutY="185.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name" />
+                        <Text fx:id="about_emp_sex1" layoutX="355.0" layoutY="235.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name" />
+                        <Text fx:id="about_emp_has_family1" layoutX="355.0" layoutY="285.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name" />
+                        <Text fx:id="about_emp_email1" layoutX="355.0" layoutY="345.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name" />
+                        <Text fx:id="about_emp_phone_number1" layoutX="355.0" layoutY="405.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name" />
+                        <Text fx:id="about_emp_country1" layoutX="745.0" layoutY="105.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name" />
+                        <Text fx:id="about_emp_state1" layoutX="745.0" layoutY="145.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name" />
+                        <Text fx:id="about_emp_city1" layoutX="745.0" layoutY="185.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name" />
+                        <Text fx:id="about_emp_street1" layoutX="745.0" layoutY="235.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name" />
+                        <Text fx:id="about_emp_department1" layoutX="745.0" layoutY="285.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name" />
+                        <Text fx:id="about_emp_position1" layoutX="745.0" layoutY="345.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name" />
+                     </children>
+                  </Pane>
+                  <Pane fx:id="otpravit" disable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1350.0" style="-fx-background-color: #FFFFFF;" visible="false">
+                     <children>
+                        <TextField fx:id="otpravit_name" layoutX="186.0" layoutY="198.0" promptText="Имя" />
+                        <TextField fx:id="otpravit_cause" layoutX="186.0" layoutY="238.0" promptText="Причина" />
+                        <TextField fx:id="otpravit_start_date" layoutX="186.0" layoutY="278.0" promptText="ГГГГ-ММ-ДД" />
+                        <JFXButton fx:id="otpravit_ok" layoutX="260.0" layoutY="388.0" style="-fx-background-color: #556677; -fx-background-radius: 5; -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.4) , 5, 0.0 , 0 , 1 );" text="Ок" textFill="WHITE" />
+                        <Text layoutX="159.0" layoutY="109.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Отправить сотрудника в отпуск/командировку" />
+                        <Text layoutX="62.0" layoutY="215.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Имя сотрудника" />
+                        <Text layoutX="116.0" layoutY="258.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Причина" />
+                        <Text layoutX="165.0" layoutY="298.0" strokeType="OUTSIDE" strokeWidth="0.0" text="С" />
+                        <JFXButton fx:id="otpravit_cancel" layoutX="140.0" layoutY="388.0" style="-fx-background-color: #556677; -fx-background-radius: 5; -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.4) , 5, 0.0 , 0 , 1 );" text="Отмена" textFill="WHITE" />
+                        <TextField fx:id="otpravit_end_date" layoutX="186.0" layoutY="318.0" promptText="ГГГГ-ММ-ДД" />
+                        <Text layoutX="156.0" layoutY="338.0" strokeType="OUTSIDE" strokeWidth="0.0" text="До" />
+                     </children>
+                  </Pane>
+               </children>
+            </Pane>
+         </center>
+         <right>
+            <Pane prefHeight="0.0" prefWidth="0.0" BorderPane.alignment="CENTER" />
+         </right>
+         <bottom>
+            <Pane prefHeight="0.0" prefWidth="0.0" BorderPane.alignment="CENTER" />
+         </bottom>
+      </BorderPane>
+      <Pane fx:id="login_page" prefHeight="900.0" prefWidth="1700.0" style="-fx-background-color: #556677;">
+         <children>
+            <Pane fx:id="login" layoutX="675.0" layoutY="200.0" prefHeight="350.0" prefWidth="350.0" style="-fx-background-color: #EEEEFF; -fx-background-radius: 20; -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.4) , 50, 0.0 , 0 , 15 );">
+               <children>
+                  <JFXTextField fx:id="login_userName" focusColor="#556677" layoutX="45.0" layoutY="106.0" prefHeight="40.0" prefWidth="250.0" promptText="Имя пользователя" unFocusColor="#4d4d4d" />
+                  <JFXPasswordField fx:id="login_password" focusColor="#556677" layoutX="45.0" layoutY="196.0" prefHeight="40.0" prefWidth="250.0" promptText="Пароль" />
+                  <Text layoutX="143.0" layoutY="61.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Вход">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Text>
+                  <JFXButton fx:id="login_btn" layoutX="140.0" layoutY="295.0" style="-fx-background-color: #556677; -fx-background-radius: 10; -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.4) , 25, 0.0 , 0 , 5 );" text="Войти" textFill="#aee1ff" />
+               </children>
+            </Pane>
+            <JFXButton fx:id="login_forgot_password_btn" layoutX="1484.0" layoutY="810.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 10; -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.4) , 25, 0.0 , 0 , 5 );" text="Забыли пароль?" />
+            <Pane fx:id="forgot_password" disable="true" layoutX="625.0" layoutY="280.0" prefHeight="320.0" prefWidth="450.0" style="-fx-background-color: #EEEEFF; -fx-background-radius: 20; -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.4) , 50, 0.0 , 0 , 15 );" visible="false">
+               <children>
+                  <JFXTextField fx:id="forgot_password_email" focusColor="#556677" layoutX="100.0" layoutY="120.0" prefHeight="40.0" prefWidth="250.0" promptText="Адрес электронной почты" unFocusColor="#4d4d4d" />
+                  <Text layoutX="148.0" layoutY="75.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Забыли пароль">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Text>
+                  <JFXButton fx:id="send_password_btn" layoutX="144.0" layoutY="245.0" style="-fx-background-color: #556677; -fx-background-radius: 10; -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.4) , 25, 0.0 , 0 , 5 );" text="Отправить пароль" textFill="#aee1ff" />
+               </children>
+            </Pane>
+            <JFXButton fx:id="to_login_page_btn" disable="true" layoutX="1483.0" layoutY="811.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 10; -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.4) , 25, 0.0 , 0 , 5 );" text="Войти в систему" visible="false" />
+            <Pane fx:id="password_sended" disable="true" layoutX="625.0" layoutY="330.0" prefHeight="235.0" prefWidth="450.0" style="-fx-background-color: #EEEEFF; -fx-background-radius: 20; -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.4) , 50, 0.0 , 0 , 10 );" visible="false">
+               <children>
+                  <Text layoutX="79.0" layoutY="117.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Пароль отправлен на вашу почту">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Text>
+               </children>
+            </Pane>
+         </children>
+      </Pane>
+   </children>
+</Pane>
